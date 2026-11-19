@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Student Marks Analyzer</h1>
+            <p>Add marks, then analyze them with the Java backend.</p>
+        </header>
+
+        <section class="card">
+            <h2>1. Enter Marks</h2>
+            <div class="row">
+                <input type="number" id="markInput" min="0" max="100" placeholder="Marks (0-100)">
+                <button id="addBtn">Add Mark</button>
+                <button id="clearBtn" class="secondary">Clear All</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>2. Students</h2>
+            <table>
+                <thead>
+                    <tr><th>Student</th><th>Marks</th></tr>
+                </thead>
+                <tbody id="marksBody">
+                    <tr><td colspan="2" class="empty">No marks added yet</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>3. Analyze</h2>
+            <div class="actions">
+                <button data-action="display">Display</button>
+                <button data-action="highest">Highest</button>
+                <button data-action="lowest">Lowest</button>
+                <button data-action="average">Average</button>
+                <button data-action="sort">Sort</button>
+            </div>
+            <div class="row">
+                <input type="number" id="searchInput" placeholder="Marks to search">
+                <button data-action="search">Search</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Summary</h2>
+            <div class="stats">
+                <div class="stat"><span>Highest</span><strong id="highest">--</strong></div>
+                <div class="stat"><span>Lowest</span><strong id="lowest">--</strong></div>
+                <div class="stat"><span>Average</span><strong id="average">--</strong></div>
+            </div>
+            <p id="message" class="message"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
